@@ -1,5 +1,7 @@
-// API Key
-const apiKey = 'a9d1fc1b28744e9eba0e2e3382db9a3a'; 
+require('dotenv').config();
+const apiKey = process.env.API_KEY;
+console.log(apiKey); // Check if the API key is loaded
+
 
 let timerActive = false; // Flag to check if a timer is already running
 let currentTimer; // To store the current timer
