@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Finder</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="glass-container">
+        <header>
+ <!-- Search Form Section -->
+ <section class="search-section">
+    <h1>What's for dinner?</h1>
+    <!-- The search form for querying recipes -->
+    <form action="/search-results.html" method="get">
+        <label for="search">Enter Recipe Name:</label>
+        <input type="text" id="search" name="query" placeholder="e.g. pizza, pasta" autocomplete="off">
+        <button type="submit" id="searchButton">Search</button>
+    </form>
+</section>        </header>
+        <section id="results"></section>
+    </div>
+<script src="/js/index.js"></script>
+</body>
+</html>
