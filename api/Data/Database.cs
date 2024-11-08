@@ -34,9 +34,5 @@ namespace api.Data
 
         }
 
-        
-        public List<User> Get() => 
-
-
     }
 }
