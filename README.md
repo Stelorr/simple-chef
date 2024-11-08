@@ -17,8 +17,4 @@ Welcome to the Recipe Finder web app! This application allows users to search fo
 - JavaScript
 - [Spoonacular API](https://spoonacular.com/food-api) for recipe data
 
-## Installation
 
-1. **Clone the repository** to your local machine:
-   ```bash
-   git clone https://github.com/yourusername/recipe-finder.git
