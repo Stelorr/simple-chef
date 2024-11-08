@@ -81,3 +81,4 @@ if (window.location.pathname.includes('index.html')) {
     // Recipe page: fetch and display recipe details
     fetchRecipeDetails();
 }
+
