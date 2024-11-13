@@ -189,15 +189,3 @@ if (window.location.pathname.includes('index.html')) {
     fetchRecipeDetails();
 }
 
-document.getElementById('signUpForm').addEventListener('submit', function(event) {
-    const firstName = document.getElementById('signUpFirstName').value;
-    const lastName = document.getElementById('signUpLastName').value;
-    
-    // Simple validation to check if names contain only letters
-    const namePattern = /^[A-Za-z]+$/;
-    
-    if (!namePattern.test(firstName) || !namePattern.test(lastName)) {
-        event.preventDefault(); // Stop form submission
-        alert('Please enter valid names (letters only).');
-    }
-});

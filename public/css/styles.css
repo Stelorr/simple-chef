@@ -306,11 +306,15 @@ header {
 /* Sign In/Sign Up */
 
 /* Container for forms */
+/* Container for forms */
 .form-container {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 /* Card-like form boxes */
@@ -322,6 +326,7 @@ header {
     width: 100%;
     max-width: 400px;
     text-align: center;
+    box-sizing: border-box;
 }
 
 /* Form title */
@@ -331,15 +336,18 @@ header {
     color: #333;
 }
 
-/* Input Fields */
+/* Input Fields - Force Vertical Stacking */
 .input-group {
     margin-bottom: 20px;
+    width: 100%; /* Ensure input groups take full width */
+    display: block; /* Change flex or grid to block */
 }
 
-input[type="email"],
-input[type="password"],
-input[type="text"] {
-    width: 100%;
+/* Ensure input fields stack vertically on all screen sizes */
+.input-group input {
+    display: block; /* Force inputs to be block-level elements */
+    width: 100%; /* Ensure inputs take full width */
+    margin-bottom: 10px; /* Add some spacing between inputs */
     padding: 15px;
     border: 1px solid #e0e0e0;
     border-radius: 10px;
@@ -406,4 +414,63 @@ input:focus {
         flex-direction: column;
         align-items: center;
     }
+}
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 10px 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-width: 100%;
+    z-index: 1000;
+    box-sizing: border-box; /* Ensures padding is included in the element's total width */
+}
+
+.navbar-left,
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+/* Ensure content on the right side stays visible */
+.navbar-right {
+    justify-content: flex-end;
+}
+
+/* Navigation Links */
+.nav-link {
+    color: #007aff;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 8px 16px;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #005bb5;
+}
+
+/* Add spacing between the nav links */
+.navbar-right .nav-link {
+    margin-left: 20px;
+}
+
+/* Adjust the content position due to the fixed navbar */
+.form-container {
+    margin-top: 70px; /* Adjust this based on your navbar height */
+}
+
+/* Ensure proper sizing and prevent overflow */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
