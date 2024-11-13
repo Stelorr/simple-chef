@@ -31,6 +31,10 @@ function fetchSearchResults() {
     }
 }
 
+document.getElementById("signInButton").addEventListener("click", function() {
+    window.location.href = "sign-in.html"; // Navigate to sign-in page
+});
+
 // Function to display the fetched recipe details with swipeable steps
 function displayRecipe(recipe) {
     const recipeDetailsDiv = document.getElementById('recipe-details');
@@ -184,3 +188,16 @@ if (window.location.pathname.includes('index.html')) {
     // Recipe page: fetch and display recipe details
     fetchRecipeDetails();
 }
+
+document.getElementById('signUpForm').addEventListener('submit', function(event) {
+    const firstName = document.getElementById('signUpFirstName').value;
+    const lastName = document.getElementById('signUpLastName').value;
+    
+    // Simple validation to check if names contain only letters
+    const namePattern = /^[A-Za-z]+$/;
+    
+    if (!namePattern.test(firstName) || !namePattern.test(lastName)) {
+        event.preventDefault(); // Stop form submission
+        alert('Please enter valid names (letters only).');
+    }
+});
