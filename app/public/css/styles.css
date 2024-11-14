@@ -22,6 +22,9 @@ header {
     margin-bottom: 20px;
 }
 
+form {
+    flex-direction: column;
+}
 
 /* Main container for form */
 .glass-container {
@@ -127,8 +130,11 @@ button:hover {
     }
 
     form {
-        flex-direction: column;
         gap: 15px;
+    }
+
+    .recipe {
+        width: 100%;
     }
 }
 
@@ -225,13 +231,6 @@ header {
     100% {
         opacity: 1;
         transform: translateY(0);
-    }
-}
-
-/* Responsiveness for smaller screens */
-@media (max-width: 768px) {
-    .recipe {
-        width: 100%;
     }
 }
 
@@ -408,13 +407,6 @@ input:focus {
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
-/* Responsive Layout */
-@media (max-width: 768px) {
-    .form-container {
-        flex-direction: column;
-        align-items: center;
-    }
-}
 /* Navbar Styling */
 .navbar {
     display: flex;
@@ -460,11 +452,6 @@ input:focus {
 /* Add spacing between the nav links */
 .navbar-right .nav-link {
     margin-left: 20px;
-}
-
-/* Adjust the content position due to the fixed navbar */
-.form-container {
-    margin-top: 70px; /* Adjust this based on your navbar height */
 }
 
 /* Ensure proper sizing and prevent overflow */
