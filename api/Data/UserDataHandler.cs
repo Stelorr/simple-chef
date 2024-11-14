@@ -10,22 +10,14 @@ namespace api.Data
         {
             myDatabase = new Database();
         }
-        public User GetUser(string Username, string Password)
-        {
-            User myUser = new User();
-
-
-                
-            return myUser;
-        }
 
         public async Task<List<User>> GetUsersAsync() =>
-            await myDatabase._users.Find(_ => true).ToListAsync();
+            await myDatabase._users.Find(user => true).ToListAsync();
 
-        public async Task<User?> GetUserByCredentialsAsync(string username, string password)
+        public async Task<User?> GetUserByCredentialsAsync(string email, string password)
         {
             var filter = Builders<User>.Filter.And(
-                Builders<User>.Filter.Eq(u => u.Username, username),
+                Builders<User>.Filter.Eq(u => u.EmailAddress, email),
                 Builders<User>.Filter.Eq(u => u.Password, password));
 
             return await myDatabase._users.Find(filter).FirstOrDefaultAsync();

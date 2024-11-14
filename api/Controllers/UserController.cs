@@ -27,9 +27,9 @@ namespace api.Controllers
         }
 
         [HttpGet("login")]
-        public async Task<ActionResult<User>> Login(string username, string password)
+        public async Task<ActionResult<User>> Login(string email, string password)
         {
-            var user = await dataHandler.GetUserByCredentialsAsync(username, password);
+            var user = await dataHandler.GetUserByCredentialsAsync(email, password);
 
             if (user == null)
             {
