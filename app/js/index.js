@@ -31,10 +31,6 @@ function fetchSearchResults() {
     }
 }
 
-document.getElementById("signInButton").addEventListener("click", function() {
-    window.location.href = "sign-in.html"; // Navigate to sign-in page
-});
-
 // Function to display the fetched recipe details with swipeable steps
 function displayRecipe(recipe) {
     const recipeDetailsDiv = document.getElementById('recipe-details');
