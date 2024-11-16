@@ -189,3 +189,75 @@ if (window.location.pathname.includes('index.html')) {
     fetchRecipeDetails();
 }
 
+// JavaScript to handle profile picture upload
+document.getElementById('uploadProfilePicture').addEventListener('change', function(event) {
+    const file = event.target.files[0];
+    
+    if (file) {
+        const reader = new FileReader();
+
+        // When file is loaded, set it as the profile image
+        reader.onload = function(e) {
+            document.getElementById('profileImage').src = e.target.result;
+        };
+
+        // Read the file as a data URL (base64)
+        reader.readAsDataURL(file);
+    }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const createRecipeButton = document.getElementById('createRecipeButton');
+    const createRecipeModal = document.getElementById('createRecipeModal');
+    const closeModal = document.querySelector('.close');
+    const createRecipeForm = document.getElementById('createRecipeForm');
+
+    // Open the modal to create a recipe
+    createRecipeButton.addEventListener('click', () => {
+        createRecipeModal.style.display = 'block';
+    });
+
+    // Close the modal
+    closeModal.addEventListener('click', () => {
+        createRecipeModal.style.display = 'none';
+    });
+
+    // Close the modal if clicked outside of the modal content
+    window.addEventListener('click', (event) => {
+        if (event.target === createRecipeModal) {
+            createRecipeModal.style.display = 'none';
+        }
+    });
+
+    // Handle form submission to add a new recipe
+    createRecipeForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        // Get the form data
+        const title = document.getElementById('recipeTitle').value;
+        const image = document.getElementById('recipeImage').files[0];
+        const ingredients = document.getElementById('recipeIngredients').value.split(',');
+        const instructions = document.getElementById('recipeInstructions').value;
+
+        // Mock recipe object (In a real app, you'd send this to your server)
+        const newRecipe = {
+            title,
+            image: URL.createObjectURL(image),
+            ingredients,
+            instructions
+        };
+
+        // Display the new recipe in the gallery
+        const recipeCard = document.createElement('div');
+        recipeCard.classList.add('recipe-card');
+        recipeCard.innerHTML = `
+            <img src="${newRecipe.image}" alt="${newRecipe.title}" class="recipe-image">
+            <h3>${newRecipe.title}</h3>
+        `;
+        // Assuming recipesGallery is an element where saved recipes are displayed
+        document.getElementById('recipesGallery').appendChild(recipeCard);
+
+        // Close the modal
+        createRecipeModal.style.display = 'none';
+    });
+});

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Account</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-left">
+                <a href="index.html" class="nav-link">Home</a>
+            </div>
+            <div class="navbar-right">
+                <a href="sign-in.html" class="nav-link">Sign In</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container user-account-container">
+        <!-- Profile Section -->
+        <div class="profile-section">
+            <div class="profile-picture">
+                <img id="profileImage" src="default-avatar.png" alt="Profile Picture">
+                <input type="file" id="uploadProfilePicture" accept="image/*" style="display: none;">
+                <label for="uploadProfilePicture" class="upload-label">Change Picture</label>
+            </div>
+            <h1 class="username">John Doe</h1>
+        <button class="follow-button">Follow</button>
+    </div>
+
+        <!-- Tabs for Saved Recipes -->
+        <div class="tabs">
+            <button class="tab-button active" id="savedRecipesTab">Saved Recipes</button>
+        </div>
+
+        <!-- Saved Recipes Section -->
+        <div class="saved-recipes" id="savedRecipes">
+            <div class="recipe-card">
+                <img src="recipe-image1.jpg" alt="Recipe Image" class="recipe-thumbnail">
+                <div class="recipe-details">
+                    <h3>Recipe Title 1</h3>
+                    <p>Quick description of the recipe.</p>
+                </div>
+            </div>
+
+            <div class="recipe-card">
+                <img src="recipe-image2.jpg" alt="Recipe Image" class="recipe-thumbnail">
+                <div class="recipe-details">
+                    <h3>Recipe Title 2</h3>
+                    <p>Quick description of the recipe.</p>
+                </div>
+            </div>
+
+            <!-- Create Recipe Button -->
+    <button id="createRecipeButton" class="create-recipe-btn">Create a Recipe</button>
+
+             <!-- Modal for Creating a Recipe -->
+    <!-- Modal for Creating a Recipe -->
+    <div id="createRecipeModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Create a New Recipe</h2>
+            <form id="createRecipeForm">
+                <label for="recipeTitle">Recipe Title</label>
+                <input type="text" id="recipeTitle" name="recipeTitle" required>
+
+                <label for="recipeImage">Recipe Image</label>
+                <input type="file" id="recipeImage" name="recipeImage" accept="image/*" required>
+
+                <label for="recipeIngredients">Ingredients (Comma separated)</label>
+                <input type="text" id="recipeIngredients" name="recipeIngredients" required>
+
+                <label for="recipeInstructions">Instructions</label>
+                <textarea id="recipeInstructions" name="recipeInstructions" required></textarea>
+
+                <button type="submit">Add Recipe</button>
+            </form>
+        </div>
+    </div>
+
+
+            <!-- Add more recipe cards as needed -->
+        </div>
+    </div>
+
+    <script src="index.js"></script> <!-- Link to your JS file -->
+</body>
+</html>
