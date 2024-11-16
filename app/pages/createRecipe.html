@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Recipe</title>
+    <link rel="stylesheet" href="css/createRecipe.css" />
+    <link rel="stylesheet" href="css/globalStyles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <form class="recipe-form" id="recipeForm">
+        <div class="form-group">
+          <label for="title">Recipe Title</label>
+          <input type="text" id="title" required />
+        </div>
+
+        <div class="form-group">
+          <label for="description">Description</label>
+          <textarea id="description" rows="3" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="cookTime">Cooking Time</label>
+          <input type="text" id="cookTime" required />
+        </div>
+
+        <div class="form-group">
+          <label for="servings">Number of Servings</label>
+          <input type="number" id="servings" required />
+        </div>
+
+        <div class="form-group">
+          <label for="ingredients">Ingredients (one per line)</label>
+          <textarea id="ingredients" rows="5" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="instructions">Instructions</label>
+          <textarea id="instructions" rows="5" required></textarea>
+        </div>
+
+        <div class="button-group">
+          <button type="submit" class="save-btn">Save Recipe</button>
+          <button
+            onclick="handleCancel()"
+            type="button"
+            class="cancel-btn"
+            id="cancelBtn"
+          >
+            Cancel
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <script src="js/createRecipe.js"></script>
+  </body>
+</html>
