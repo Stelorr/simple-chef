@@ -618,50 +618,6 @@ body, html {
     color: #555;
 }
 
-/* create recipe action on user-account.html*/
-
-.create-recipe-btn {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background-color: #007aff;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 50px;
-    font-size: 1rem;
-    cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.create-recipe-btn:hover {
-    background-color: #005ecb;
-}
-
-/* Modal Styles */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    background-color: rgba(0, 0, 0, 0.4); /* Black with transparency */
-    justify-content: center;
-    align-items: center;
-    transition: opacity 0.3s ease;
-}
-
-.modal-content {
-    background-color: #fff;
-    margin: 5% auto;
-    padding: 20px;
-    border-radius: 10px;
-    width: 80%;
-    max-width: 600px;
-    position: relative;
-}
-
 .close {
     color: #aaa;
     font-size: 30px;
@@ -679,4 +635,42 @@ body, html {
     cursor: pointer;
 }
 
+.profile-dropdown {
+    position: relative;
+    display: inline-block;
+}
 
+.profile-picture-small {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    object-fit: cover;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.dropdown-content.show {
+    display: block;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
