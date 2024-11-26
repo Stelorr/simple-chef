@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Account</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/createRecipe.css">
+
 </head>
 <body>
     <header>
@@ -30,6 +32,13 @@
         <button class="follow-button">Follow</button>
     </div>
 
-    <script src="js/index.js"></script> <!-- Link to your JS file -->
+<!-- ? create recipe btn -->
+
+        <button onclick="handleClick()" class="create-btn" id="createBtn">Create Recipe</button>
+
+        <div class="recipe-gallery" id="recipeGallery"></div>
+
+    <script src="js/index.js"></script> 
+    <script src="js/userAccount.js"></script><!-- Link to your JS file -->
 </body>
 </html>
