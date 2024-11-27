@@ -1,3 +1,6 @@
+
+console.log('we are pretty cool');
+
 // Initialize page-specific functionality when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     // Check which page we're on and initialize appropriate functionality
