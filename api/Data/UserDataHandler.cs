@@ -23,9 +23,7 @@ namespace api.Data
             return await myDatabase._users.Find(filter).FirstOrDefaultAsync();
         }
 
-        public async Task CreateUserAsync(User newUser)
-        {
+        public async Task CreateUserAsync(User newUser) =>
             await myDatabase._users.InsertOneAsync(newUser);
-        }
     }
 }

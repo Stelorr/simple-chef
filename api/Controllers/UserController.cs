@@ -22,7 +22,7 @@ namespace api.Controllers
         [HttpGet]
         public async Task<ActionResult<List<User>>> GetUsers()
         {
-            var users = await dataHandler.GetUsersAsync();
+            List<User> users = await dataHandler.GetUsersAsync();
             return Ok(users);
         }
 

@@ -8,18 +8,14 @@ async function handleOnClick() {
 }
 
 async function fetchSignIn(email, password) {
-    await fetch(`https://localhost:7044/api/User/login?email=${email}&password=${password}`, {
-        method: "GET",
-        headers: {
-            "Accept": "Application/json",
-            "Content-Type": "Application/json"
-        }
+    fetch(`https://localhost:7044/api/User/login?email=${email}&password=${password}`, {
     }).then(response => {
-        return response.json();
+        console.log(response);
+        return response
     }).then(data => {
         console.log(data);
     }).catch(e => {
         console.log(e);
-    })
+    });
 }
 
