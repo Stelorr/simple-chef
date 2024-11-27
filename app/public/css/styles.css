@@ -425,14 +425,14 @@ input:focus {
     box-sizing: border-box; /* Ensures padding is included in the element's total width */
 }
 
-.navbar-left,
-.navbar-right {
+.navbar-item-left,
+.navbar-item-right {
     display: flex;
     align-items: center;
 }
 
 /* Ensure content on the right side stays visible */
-.navbar-right {
+.navbar-item-right {
     justify-content: flex-end;
 }
 
@@ -450,7 +450,7 @@ input:focus {
 }
 
 /* Add spacing between the nav links */
-.navbar-right .nav-link {
+.navbar-item-right .nav-link {
     margin-left: 20px;
 }
 
